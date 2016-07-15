@@ -1,0 +1,11 @@
+#include "url_finder.h"
+
+TextFinder::TextFinder()
+{
+    
+}
+
+TextFinder::~TextFinder()
+{
+    
+}

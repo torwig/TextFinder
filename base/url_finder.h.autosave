@@ -1,0 +1,21 @@
+#ifndef TEXTFINDER_H
+#define TEXTFINDER_H
+
+#include <QString>
+
+class TextFinder
+{
+    
+public:
+    const QString kStartUrlPattern {"http://"};
+    const QString kInvalidUrlCharacters {"!\"#&'*,:;<=>?[]^`{|} \t\n"};
+    
+    TextFinder();
+    ~TextFinder();
+    
+    static QStringList findTextInContent(const QString& text,
+                                         const QByteArray& data);
+    
+};
+
+#endif // TEXTFINDER_H
