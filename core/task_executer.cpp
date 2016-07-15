@@ -3,7 +3,6 @@
 #include "base/text_finder.h"
 
 #include <QDebug>
-#include <QPair>
 
 TaskExecuter::TaskExecuter(QObject* parent)
     : QObject(parent)
@@ -96,6 +95,9 @@ void TaskExecuter::continueDownload()
             }
             if (!it.value().hasWork) {
                 QString url = getNextUrlForDownload();
+                if (url.isEmpty()) {
+                    return;
+                }
                 qDebug() << QString("Next URL: %1").arg(url);
                 it.value().hasWork = true;
                 it.value().searchUrl = url;

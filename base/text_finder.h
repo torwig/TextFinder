@@ -5,7 +5,7 @@
 #include <QStringList>
 #include <QByteArray>
 
-const QString kStartUrlPattern {"http://"};
+const QString kStartUrlPattern {"HTTP://"};
 const QString kInvalidUrlCharacters {"!\"'*,:;<=>[]^`{|} \t\n"};
 
 class TextFinder
