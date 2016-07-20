@@ -3,7 +3,7 @@
 #include "base/config.h"
 
 #include <QMessageBox>
-#include <QDesktopWidget>
+#include <QScreen>
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent),
@@ -155,9 +155,10 @@ void MainWindow::onLogMessage(const QString& msg)
 
 void MainWindow::showEvent(QShowEvent* ev)
 {
-    auto dw = QApplication::desktop();
-    move( (dw->width() - width() ) / 2,
-          (dw->height() - height()) / 2 );
+    QScreen* screen = QApplication::primaryScreen();
+    QRect geom = screen->geometry();
+    move( ( geom.width() - width() ) / 2,
+          ( geom.height() - height() ) / 2);
     QMainWindow::showEvent(ev);
 }
 
